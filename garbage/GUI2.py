@@ -163,7 +163,7 @@ def start_game():
     game = SnakeGame()
     game.mainloop()
 
-
+2
 if __name__ == '__main__':
     # 配置日志记录
     logging.basicConfig(
