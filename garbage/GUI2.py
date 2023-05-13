@@ -8,7 +8,7 @@ import numpy as np
 import pyautogui
 import threading
 import cv2
-
+import logging
 
 class SnakeGame(tk.Tk):
     def __init__(self):
@@ -165,5 +165,23 @@ def start_game():
 
 
 if __name__ == '__main__':
+    # 配置日志记录
+    logging.basicConfig(
+        level=logging.DEBUG,  # 设置日志级别为 DEBUG
+        format='%(asctime)s - %(levelname)s - %(message)s',  # 设置日志格式
+        filename='app.log',  # 指定日志文件名
+        filemode='w'  # 指定文件打开模式为覆盖写入
+    )
+
+    # 创建日志记录器
+    logger = logging.getLogger()
+
+    # 输出不同级别的日志
+    logger.debug('This is a debug message')
+    logger.info('This is an info message')
+    logger.warning('This is a warning message')
+    logger.error('This is an error message')
+    logger.critical('This is a critical message')
+
     start_game()
 
